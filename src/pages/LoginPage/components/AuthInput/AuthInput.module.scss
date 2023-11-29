@@ -1,0 +1,27 @@
+@import '../../../../assets/scss/libs/variables';
+@import '../../../../assets/scss/libs/mixins';
+
+.block {
+  position: relative;
+  border: 1px solid rgba($gray, 0.4);
+  padding: 12px;
+
+  @include flex(flex-start, center);
+  gap: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  svg {
+    width: 28px;
+    font-size: 20px;
+    color: $green;
+  }
+}
+
+.input {
+  background: none;
+  width: 100%;
+  outline: none;
+}

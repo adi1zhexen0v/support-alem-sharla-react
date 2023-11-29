@@ -1,0 +1,95 @@
+@import '../../assets/scss/libs/variables';
+@import '../../assets/scss/libs/mixins';
+
+.sidebar {
+  max-width: 330px;
+  height: 100vh;
+  background-color: $green;
+  box-shadow: 2px 2px 12px 0px rgba(#000, 0.2);
+  @include flex(space-between, flex-start);
+  flex-direction: column;
+  flex-shrink: 0;
+  
+  &__part {
+    width: 100%; 
+  }
+}
+
+.logo {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.welcome {
+  @include text(20px, 28px, 600, #fff);
+  padding-bottom: 12px;
+  margin: 0 32px;
+  border-bottom: 1px solid rgba(#fff, 0.3);
+}
+
+.hide {
+  &__btn {
+    width: 32px;
+    aspect-ratio: 1/1;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    @include flex(center, center);
+
+    svg {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+
+  &__wrapper {
+    margin: 32px 24px;
+    @include flex(flex-end, center);
+  }
+}
+
+.arrow {
+  margin: 16px 0 32px;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  transition: 0.3s ease;
+  @include text(18px, 24px, 300, #fff);
+  @include flex(flex-start, flex-start);
+
+  &__icon {
+    width: 28px;
+    height: 24px;
+    flex-shrink: 0;
+    text-align: center;
+    @include flex(center, center);
+  }
+
+  &__name {
+    margin-left: 12px;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: $green;
+    transition: 0.2s ease;
+  }
+
+  &__active,
+  &:hover {
+    cursor: pointer;
+    background-color: $green-hover;
+    &:after {
+      background: rgba(#fff, 0.6);
+    }
+  }
+}

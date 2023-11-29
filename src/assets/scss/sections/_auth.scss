@@ -1,0 +1,76 @@
+@import '../libs/variables';
+@import '../libs/mixins';
+
+.auth {
+  width: 100vw;
+  height: 100vh;
+  background: $bg;
+
+  @include flex(center, center);
+
+  &-form {
+    width: 480px;
+    box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+    background: $ghost-white;
+    padding: 24px 36px;
+    &__title {
+      text-align: center;
+      @include text(28px, 40px, 700, $green);
+      margin: 12px 0;
+    }
+
+    &__block {
+      position: relative;
+      border: 1px solid rgba($gray, 0.4);
+      padding: 12px;
+
+      @include flex(flex-start, center);
+      gap: 16px;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      svg {
+        width: 28px;
+        font-size: 20px;
+        color: $green;
+      }
+    }
+
+    &__error {
+      margin: 8px 0;
+      @include text(12px, 12px, 400, $red);
+    }
+
+    &__input {
+      background: none;
+      width: 100%;
+      outline: none;
+    }
+
+    &__submit {
+      width: 100%;
+      padding: 12px 24px;
+      background: $green;
+      transition: 0.2s ease;
+
+      @include text(16px, 20px, 500, #fff);
+
+      &:hover {
+        cursor: pointer;
+        background: $green-hover;
+      }
+    }
+
+    &__link {
+      @include text(16px, 20px, 400, $dark-gray);
+      margin-top: 16px;
+
+      a {
+        color: $green;
+        font-weight: 700;
+      }
+    }
+  }
+}
