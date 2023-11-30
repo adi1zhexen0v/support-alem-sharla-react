@@ -4,7 +4,7 @@
 .sidebar {
   max-width: 330px;
   height: 100vh;
-  background-color: $green;
+  background-color: $blue;
   box-shadow: 2px 2px 12px 0px rgba(#000, 0.2);
   @include flex(space-between, flex-start);
   flex-direction: column;
@@ -80,14 +80,14 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: $green;
+    background: $blue;
     transition: 0.2s ease;
   }
 
   &__active,
   &:hover {
     cursor: pointer;
-    background-color: $green-hover;
+    background-color: $blue-hover;
     &:after {
       background: rgba(#fff, 0.6);
     }

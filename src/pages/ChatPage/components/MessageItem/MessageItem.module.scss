@@ -1,0 +1,73 @@
+@import '../../../../assets/scss/libs/variables';
+@import '../../../../assets/scss/libs/mixins';
+
+.message {
+  @include flex(flex-end, flex-start);
+  flex-direction: column;
+
+  &__self {  
+    align-items: flex-end;
+  }
+}
+
+.box {
+  max-width: 80%;
+  padding: 8px 20px;
+  border-radius: 12px;
+  background: $message;
+  @include text(16px, 20px, 600, $blue);
+
+  &__self {
+    background: $blue-hover;
+    color: $ghost-white;
+  }
+}
+
+.file {
+  color: $blue-hover;
+  @include flex(flex-start, center);
+  gap: 12px;
+
+  span {
+    width: 40px;
+    aspect-ratio: 1/1;
+    background: $blue-hover;
+    border-radius: 100%;
+    @include flex(center, center);
+
+    svg {
+      font-size: 20px;
+      color: $message;
+    }
+  }
+
+  &__self {
+    span {
+      background: $message;
+
+      svg {
+        color: $blue-hover
+      }
+    }
+  }
+}
+
+.date {
+  @include text(14px, 20px, 600, rgba($gray, 0.6));
+  margin: 2px 0 8px;
+}
+
+.picture {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($dark-gray, 0.85);
+  @include flex(center, center);
+
+  &__img {
+    height: 100%;
+  }
+}

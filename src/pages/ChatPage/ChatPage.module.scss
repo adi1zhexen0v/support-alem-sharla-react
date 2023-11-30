@@ -1,0 +1,26 @@
+@import '../../assets/scss/libs/variables';
+@import '../../assets/scss/libs/mixins';
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wrapper {
+  @include flex(space-between, stretch);
+  gap: 48px;
+  flex: 1;
+  overflow: hidden;
+}
+  
+.part {
+  &:first-child {
+    width: 480px;
+    flex-shrink: 0;
+  }
+
+  &:last-child {
+    width: 100%;
+  }
+}

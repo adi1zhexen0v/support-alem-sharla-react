@@ -7,6 +7,7 @@ import { CHAT_ROUTE } from "../../utils/consts";
 import { getErrorMessage } from "../../utils/errors";
 import { useAppDispatch } from "../../hooks/reduxHooks";
 import { setUser } from "../..//redux/slices/userSlice";
+import styles from './LoginPage.module.scss';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -42,9 +43,9 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="auth">
-      <form className="auth-form" onSubmit={signIn}>
-        <h1 className="auth-form__title">Вход</h1>
+    <div className={styles.auth}>
+      <form className={styles.form} onSubmit={signIn}>
+        <h1 className={styles.title}>Вход</h1>
         <AuthInput
           value={email}
           setValue={setEmail}
@@ -58,8 +59,8 @@ const LoginPage: React.FC = () => {
           icon={faLock}
           isPassword={true}
         />
-        <input type="submit" value="Войти" className="auth-form__submit" />
-        {error && <p className="auth-form__error">{error}</p>}
+        <input type="submit" value="Войти" className={styles.submit} />
+        {error && <p className={styles.error}>{error}</p>}
       </form>
     </div>
   );

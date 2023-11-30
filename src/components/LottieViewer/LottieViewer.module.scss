@@ -1,0 +1,17 @@
+@import '../../assets/scss/libs/variables';
+@import '../../assets/scss/libs/mixins';
+
+.block {
+  width: 100%;
+  @include flex(center, center);
+  flex-direction: column;
+}
+
+.text {
+  text-align: center;
+  @include text(20px, 28px, 600, $dark-gray);
+}
+
+.image {
+  width: 360px;
+}

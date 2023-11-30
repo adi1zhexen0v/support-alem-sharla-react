@@ -32,3 +32,8 @@ export interface Profile {
   userID: string;
   username: string;
 }
+
+export interface Status {
+  eng: string;
+  rus: string;
+}

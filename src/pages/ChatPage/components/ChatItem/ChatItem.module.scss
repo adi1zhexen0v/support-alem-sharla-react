@@ -1,0 +1,119 @@
+@import '../../../../assets/scss/libs/variables';
+@import '../../../../assets/scss/libs/mixins';
+
+.item {
+  position: relative;
+  background: $ghost-white;
+  padding: 10px 16px;
+  border: 1px solid rgba($gray, 0.15);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 0px rgba(34, 60, 80, 0.2);
+  margin-bottom: 10px;
+
+  @include flex(space-between, center);
+  transition: 0.1s ease;
+
+  &:hover {
+    cursor: pointer;
+    background: #fff;
+  }
+}
+
+.part {
+  &:first-child {
+    @include flex(flex-start, center);
+    flex: 1;
+    gap: 14px;
+  }
+
+  &:last-child {
+    width: 160px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.img {
+  position: relative;
+  img {
+    width: 60px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+}
+
+.name {
+  @include text(16px, 23px, 700, $blue);
+}
+
+.message {
+  @include text(14px, 20px, 600, $gray);
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.unseen {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 18px;
+  aspect-ratio: 1/1;
+  border-radius: 3px;
+  background: $red;
+
+  @include text(12px, 14px, 600, #fff);
+  @include flex(center, center);
+}
+
+.status {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% - 20px);
+  width: 140px;
+  padding: 8px 0;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba($dark-gray, 0.15);
+  border: 1px solid rgba($dark-gray, 0.08);
+  border-radius: 7px;
+
+  &__btn {
+    padding: 12px 18px;
+    width: 140px;
+    background: $blue-button;
+    border-radius: 6px;
+    gap: 10px;
+    transition: 0.2s ease;
+
+    @include flex(space-between, center);
+    @include text(14px, 14px, 400, $blue);
+
+    &:hover {
+      cursor: pointer;
+      background: rgba($blue-hover, 0.55);
+    }
+  }
+
+  &__item {
+    padding: 12px 0 12px 18px;
+    transition: 0.2s ease;
+
+    @include text(14px, 14px, 400, $gray);
+
+    &:hover {
+      cursor: pointer;
+      background: rgba($dark-gray, 0.04);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($dark-gray, 0.08);
+    }
+  }
+
+  &__loading {
+    padding: 6px 0 6px 24px;
+    @include text(14px, 14px, 400, $gray);
+  }
+}

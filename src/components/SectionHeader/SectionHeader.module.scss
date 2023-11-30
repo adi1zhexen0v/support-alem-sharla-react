@@ -1,0 +1,75 @@
+@import '../../assets/scss/libs/variables';
+@import '../../assets/scss/libs/mixins';
+
+.title {
+  @include text(40px, 56px, 700, $dark-blue);
+}
+
+.header {
+  @include flex();
+  margin: 36px 0 24px;
+}
+
+.tabs {
+  @include flex(flex-start, center);
+  gap: 100px;
+}
+
+.item {
+  position: relative;
+  @include text(24px, 32px, 500, $gray);
+  transition: color 0.25s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: $blue;
+  }
+
+  &__active {
+    font-weight: 700;
+    color: $blue;
+    padding-bottom: 6px;
+    border-bottom: 2px solid $blue;
+  }
+
+  &__amount {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 8px);
+    width: 20px;
+    height: 20px;
+    background: $red;
+    border-radius: 3px;
+
+    @include flex(center, center);
+    @include text(15px, 15px, 400, #fff);
+  }  
+}
+
+.search {
+  position: relative;
+  &__input {
+    padding: 11px 18px;
+    width: 270px;
+    height: 50px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 0px rgba($dark-gray, 0.1);
+    @include text(14px, 28px, 400, $dark-gray);
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      @include text(14px, 28px, 400, $gray);
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $gray;
+  }
+}
