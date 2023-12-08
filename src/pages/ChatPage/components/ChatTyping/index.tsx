@@ -6,12 +6,11 @@ import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks";
 import { RootState } from "../../../../redux/store";
 import { addMessageToSelectedCorrespondence, deleteSelectedCorrespondence } from "../../../../redux/slices/chatSlice";
 import MessageItem from "../MessageItem";
+import Loader from "../../../../components/Loader";
 import { MessageTypes } from "../../../../utils/enums";
 import { Correspondence, Message } from "../../../../utils/interfaces";
+import { userDefaultProfile } from "../../../../utils/consts";
 import styles from './ChatTyping.module.scss';
-import Loader from "../../../../components/Loader";
-
-const userProfilePicture = require("../../../../assets/img/ava-default.png");
 
 const ChatTyping: React.FC = () => {
   const listRef = useRef<HTMLDivElement>(null);
@@ -54,7 +53,7 @@ const ChatTyping: React.FC = () => {
       <div className={styles.header}>
         <div className={styles.header__part}>
           <img
-            src={correspondence.profile?.photoLink ? correspondence.profile?.photoLink : userProfilePicture}
+            src={correspondence.profile?.photoLink ? correspondence.profile?.photoLink : userDefaultProfile}
             alt={correspondence.profile?.userID}
             className={styles.header__img}
           />

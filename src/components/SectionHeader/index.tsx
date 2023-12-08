@@ -31,41 +31,41 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <>
-        <h2 className={styles.title}>{pageTitle}</h2>
-        <div className={styles.header}>
-          <div className={styles.tabs}>{
-            statuses.map((status) => (
-              <div
-                className={
-                  activeStatus === status.eng
-                    ?  `${styles.item} ${styles.item__active}` 
-                    : styles.item
-                }
-                onClick={() => setActiveStatus(status.eng)}>
-                {status.rus}
-                {status.eng === StatusTypes.NEW && numberOfNewItems > 0 && (
-                  <div className={styles.item__amount}>{numberOfNewItems}</div>
-                )}
-              </div>
-            ))
-          }</div>
-          {
-            hasSearch && <div className={styles.search}>
-              <input
-                type="text"
-                className={styles.search__input}
-                placeholder={searchPlaceholder}
-                onChange={handleChangeSearchText}
-                onKeyPress={(e: KeyboardEvent<HTMLInputElement>) => {
-                  if (searchIsNumeric && !NUMBER_REGEXP.test(e.key)) {
-                    e.preventDefault(); 
-                  }
-                }}
-              />
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+      <h2 className={styles.title}>{pageTitle}</h2>
+      <div className={styles.header}>
+        <div className={styles.tabs}>{
+          statuses.map((status) => (
+            <div
+              className={
+                activeStatus === status.eng
+                  ?  `${styles.item} ${styles.item__active}` 
+                  : styles.item
+              }
+              onClick={() => setActiveStatus(status.eng)}>
+              {status.rus}
+              {status.eng === StatusTypes.NEW && numberOfNewItems > 0 && (
+                <div className={styles.item__amount}>{numberOfNewItems}</div>
+              )}
             </div>
-          }     
-        </div>
+          ))
+        }</div>
+        {
+          hasSearch && <div className={styles.search}>
+            <input
+              type="text"
+              className={styles.search__input}
+              placeholder={searchPlaceholder}
+              onChange={handleChangeSearchText}
+              onKeyPress={(e: KeyboardEvent<HTMLInputElement>) => {
+                if (searchIsNumeric && !NUMBER_REGEXP.test(e.key)) {
+                  e.preventDefault(); 
+                }
+              }}
+            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </div>
+        }     
+      </div>
     </>
   );
 };

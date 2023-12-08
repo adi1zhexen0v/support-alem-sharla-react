@@ -6,6 +6,7 @@ export const REVIEWS_ROUTE: string = '/reviews';
 
 export const MESSAGES_COLLECTION: string = 'supportMessages/';
 export const PROFILES_COLLECTION: string = 'profiles';
+export const APP_REVIEWS_COLLECTION: string = 'appReviews';
 
 export const NUMBER_REGEXP: RegExp = /^\d+$/;
 

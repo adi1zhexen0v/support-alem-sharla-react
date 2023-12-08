@@ -37,3 +37,9 @@ export interface Status {
   eng: string;
   rus: string;
 }
+
+export interface AppReview {
+  id: string;
+  reviewRating: string;
+  reviewText: string[];
+}

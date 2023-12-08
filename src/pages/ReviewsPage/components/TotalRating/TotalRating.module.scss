@@ -1,0 +1,40 @@
+@import '../../../../assets/scss/libs/variables';
+@import '../../../../assets/scss/libs/mixins';
+
+.block {
+  display: grid;
+  grid-template-columns: 240px 720px;
+  grid-gap: 32px;
+}
+
+.total {
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+
+  h4 {
+    @include text(16px, 20px, 500, $dark-gray);
+    
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.rating {
+  @include flex(center, center);
+  flex-direction: column;
+  gap: 8px;
+
+  svg {
+    color: $yellow;
+  }
+
+  h4 {
+    @include text(32px, 48px, 700, $dark-gray);
+  }
+}
+
+.diagram {
+  @include flex(flex-start, flex-end);
+  gap: 5%;
+}

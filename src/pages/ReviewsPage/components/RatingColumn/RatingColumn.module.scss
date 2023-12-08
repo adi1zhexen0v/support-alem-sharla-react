@@ -1,0 +1,22 @@
+@import '../../../../assets/scss/libs/variables';
+@import '../../../../assets/scss/libs/mixins';
+
+.block {
+  width: 16%;
+  height: 100%;
+  @include flex(flex-end, center);
+  flex-direction: column;
+  gap: 8px;
+}
+
+.column {
+  width: 100%;
+  background: $blue-hover;
+  
+  @include flex(center, center);
+  @include text(14px, 16px, 700, $dark-gray);
+}
+
+.title {
+  @include text(16px, 24px, 700, $dark-gray);
+}

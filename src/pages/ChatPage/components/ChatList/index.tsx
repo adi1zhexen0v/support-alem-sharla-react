@@ -13,7 +13,7 @@ const ChatList: React.FC<ChatListProps> = ({ correspondences }) => {
 		<div className={styles.list}>{
 			correspondences.length > 0 ? correspondences.map(correspondence => (
         <ChatItem correspondence={correspondence}/>
-			)) : <LottieViewer data={NotFoundAnimation} />
+			)) : <LottieViewer data={NotFoundAnimation} text="Ничего не найдено" />
 		}</div>
 	);
 }

@@ -1,4 +1,4 @@
-import { Message } from "./interfaces";
+import { AppReview, Message } from "./interfaces";
 
 interface LastMessage {
   isManager: boolean;
@@ -48,3 +48,28 @@ export const getLastMessageText = (messages: Message[]): LastMessage => {
     text: lastMessageText
   }
 };
+
+export const calculateAverageRating = (reviews: AppReview[]): string => {
+  const ratings: number[] = reviews.map((review) => parseFloat(review.reviewRating));
+
+  if (ratings.length === 0 || ratings.some(isNaN)) {
+    return "0.0";
+  }
+
+  const averageRating: number = ratings.reduce((acc, rating) => acc + rating, 0) / ratings.length;
+  const averageRatingString: string = averageRating % 1 === 0 ? `${averageRating}.0` : averageRating.toString();
+  return averageRatingString;
+}
+
+export const calculatePercentageByRating = (reviews: AppReview[], targetRating: number): string => {
+  const ratings: number[] = reviews.map((review) => parseFloat(review.reviewRating));
+
+  if (ratings.length === 0 || ratings.some(isNaN)) {
+    return "0%";
+  }
+
+  const countMatchingRatings: number = ratings.filter((rating) => rating === targetRating).length;
+  const percentage: number = (countMatchingRatings / ratings.length) * 100;
+  const percentageString: string = `${percentage.toFixed(1)}%`;
+  return percentageString;
+}
