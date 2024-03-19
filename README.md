@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# AlemSharla Support Panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a [support panel](https://support.alemsharla.kz/) for Visa Center AlemSharla, designed to facilitate communication between managers and users, as well as provide features such as total rating visibility. It is built using the following technologies:
 
-## Available Scripts
+![Static Badge](https://img.shields.io/badge/react-blue?style=flat-square&logo=react&logoColor=%2302d3f6&labelColor=%2323272f&color=%2302d3f6&link=https%3A%2F%2Freact.dev%2F)
+![Static Badge](https://img.shields.io/badge/redux_toolkit-blue?style=flat-square&logo=redux&logoColor=%23714ab6&labelColor=%2323272f&color=%23714ab6&link=https%3A%2F%2Fredux-toolkit.js.org%2F)
+![Static Badge](https://img.shields.io/badge/typescript-blue?style=flat-square&logo=typescript&logoColor=%232f75c1&labelColor=%2323272f&color=%232f75c1&link=https%3A%2F%2Fwww.typescriptlang.org%2F)
+![Static Badge](https://img.shields.io/badge/firebase-blue?style=flat-square&logo=firebase&logoColor=%23f7c500&labelColor=%2323272f&color=%23f7c500&link=https%3A%2F%2Ffirebase.google.com%2F)
+![Static Badge](https://img.shields.io/badge/scss-blue?style=flat-square&logo=sass&logoColor=%23c66396&labelColor=%2323272f&color=%23c66396&link=https%3A%2F%2Fsass-lang.com%2F)
 
-In the project directory, you can run:
+## Technologies and Tools
 
-### `npm start`
+- Utilizes React Router Dom v6 for efficient routing.
+- Implements Redux Toolkit for state management.
+- Interacts with Firebase Auth, Firestore, and Realtime Database for user authentication and data storage.
+- Utilizes CSS Modules (SCSS) for styling, along with additional tools like Lottie, react-content-loader, and FontAwesome for enhanced styling effects.
+- Includes custom hooks such as useAuth for handling authentication.
+## Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **assets:** Contains static styles (SCSS mixins, variables) and static images.
+- **components:** Houses reusable components.
+- **firebase:** Includes all Firebase logic.
+- **hooks:** Contains custom hooks like useAuth.
+- **pages:** Holds all pages for routing.
+- **redux:** Contains all Redux Toolkit logic.
+- **utils:** Includes files such as utilities, constants, interfaces, enums, etc.
